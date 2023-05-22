@@ -23,7 +23,9 @@ class CatalogoController extends Controller
      */
     public function create()
     {
-        //
+        // vista de crear catalogo
+        $servicios = Servicio::all();
+        return view('catalogos.create', compact('servicios'));
     }
 
     /**
@@ -44,7 +46,7 @@ class CatalogoController extends Controller
      */
     public function show(Catalogo $catalogo)
     {
-        //
+        return view('catalogos.show', compact('catalogo'));
     }
 
     /**
@@ -52,7 +54,8 @@ class CatalogoController extends Controller
      */
     public function edit(Catalogo $catalogo)
     {
-        //
+        $servicios = Servicio::all();
+        return view('catalogos.edit', compact('catalogo', 'servicios'));
     }
 
     /**

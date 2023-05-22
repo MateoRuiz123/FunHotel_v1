@@ -12,7 +12,7 @@
             <div class="col-md-4">
                 <div class="float-end d-none d-md-block">
 
-                    <a href="#" type="button" class="btn btn-primary" data-toggle="modal" data-target="#crear">
+                    <a href="{{route('clientes.create')}}" type="button" class="btn btn-primary">
                         Registrar <i class="bi bi-person-plus" id="icons"></i>
                     </a>
 
