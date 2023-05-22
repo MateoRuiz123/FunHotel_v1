@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Catalogo;
+use App\Models\Servicio;
 use Illuminate\Http\Request;
 
 class CatalogoController extends Controller
@@ -12,7 +13,9 @@ class CatalogoController extends Controller
      */
     public function index()
     {
-        //
+        $catalogos = Catalogo::all();
+        $servicios = Servicio::all();
+        return view('catalogos.index', compact('catalogos', 'servicios'));
     }
 
     /**
@@ -28,7 +31,12 @@ class CatalogoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $catalogos = new Catalogo();
+        $catalogos->nombre = $request->input('nombre');
+        $catalogos->descripcion = $request->input('descripcion');
+        $catalogos->idServicio = $request->input('idServicio');
+        $catalogos->save();
+        return redirect()->back()->with('success', 'Catalogo creado exitosamente');
     }
 
     /**
@@ -52,7 +60,12 @@ class CatalogoController extends Controller
      */
     public function update(Request $request, Catalogo $catalogo)
     {
-        //
+        $catalogo = Catalogo::find($catalogo->id);
+        $catalogo->nombre = $request->input('nombre');
+        $catalogo->descripcion = $request->input('descripcion');
+        $catalogo->idServicio = $request->input('idServicio');
+        $catalogo->update();
+        return redirect()->back()->with('success', 'Catalogo actualizado exitosamente');
     }
 
     /**
@@ -60,6 +73,8 @@ class CatalogoController extends Controller
      */
     public function destroy(Catalogo $catalogo)
     {
-        //
+        $catalogo = Catalogo::find($catalogo->id);
+        $catalogo->delete();
+        return redirect()->back()->with('success', 'Catalogo eliminado exitosamente');
     }
 }

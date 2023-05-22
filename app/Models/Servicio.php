@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Servicio extends Model
 {
     use HasFactory;
+    protected $table = 'servicios';
+    protected $primaryKey = 'id';
+    protected $fillable = [
+        'nombre',
+        'descripcion'
+    ];
+    public $timestamps = false;
+    protected $guarded = [];
 }

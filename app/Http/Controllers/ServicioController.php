@@ -12,7 +12,8 @@ class ServicioController extends Controller
      */
     public function index()
     {
-        //
+        $servicios = Servicio::all();
+        return view('servicios.index', compact('servicios'));
     }
 
     /**
@@ -28,7 +29,12 @@ class ServicioController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+            $servicio = new Servicio();
+            $servicio->nombre = $request->input('nombre');
+            $servicio->descripcion = $request->input('descripcion');
+            $servicio->save();
+            return redirect()->back()->with('success', 'Servicio creado exitosamente');
     }
 
     /**
@@ -52,7 +58,11 @@ class ServicioController extends Controller
      */
     public function update(Request $request, Servicio $servicio)
     {
-        //
+        $servicio = Servicio::find($servicio->id);
+        $servicio->nombre = $request->input('nombre');
+        $servicio->descripcion = $request->input('descripcion');
+        $servicio->update();
+        return redirect()->back()->with('success', 'Servicio actualizado exitosamente');
     }
 
     /**
@@ -60,6 +70,8 @@ class ServicioController extends Controller
      */
     public function destroy(Servicio $servicio)
     {
-        //
+        $servicio = Servicio::find($servicio->id);
+        $servicio->delete();
+        return redirect()->back()->with('success', 'Servicio eliminado exitosamente');
     }
 }
