@@ -76,4 +76,6 @@
     </div> <!-- end col -->
 
     @include('clientes.create')
+    @include('clientes.delete')
+    @include('clientes.update')
 @endsection

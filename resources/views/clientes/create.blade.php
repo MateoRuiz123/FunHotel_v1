@@ -1,18 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-
-<body>
-
+@extends('layouts.app')
+@section('content')
     <!-- Modal -->
-    <div class="modal fade" id="crear" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
+    <div class="modal fade" id="crear" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -51,8 +40,8 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="" class="form-label">Apellido</label>
-                                    <input type="text" class="form-control" name="segundoApellido"
-                                        id="segundoApellido" aria-describedby="helpId" placeholder="">
+                                    <input type="text" class="form-control" name="segundoApellido" id="segundoApellido"
+                                        aria-describedby="helpId" placeholder="">
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -71,8 +60,8 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="" class="form-label">Documento</label>
-                                    <input type="text" class="form-control" name="numeroDocumento"
-                                        id="numeroDocumento" aria-describedby="helpId" placeholder="">
+                                    <input type="text" class="form-control" name="numeroDocumento" id="numeroDocumento"
+                                        aria-describedby="helpId" placeholder="">
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -122,7 +111,4 @@
             return true; // Permitir que se envíe el formulario
         }
     </script>
-
-</body>
-
-</html>
+@endsection
