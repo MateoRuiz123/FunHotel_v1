@@ -37,7 +37,7 @@
     <link href="{{ asset('assets/css/app.min.css') }}" id="app-style" rel="stylesheet" type="text/css">
 
     <!--     CLIENTES       -->
-    <link rel="stylesheet" href="{{ asset('css/clientes.css') }}">
+    {{-- <link rel="stylesheet" href="{{ asset('css/clientes.css') }}"> --}}
     <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet" />
 
 
@@ -296,7 +296,7 @@
 
     <script src="{{ asset('assets/js/app.js') }}"></script>
 
-    <script src="{{ asset('js/validacion.js') }}"></script>
+    {{-- <script src="{{ asset('js/validacion.js') }}"></script> --}}
 
     <script src="https://kit.fontawesome.com/d7b674392a.js" crossorigin="anonymous"></script>
 {{-- 

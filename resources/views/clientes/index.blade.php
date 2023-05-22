@@ -65,8 +65,6 @@
                                     </button>
                                 </td>
                             </tr>
-                            @include('clientes.delete')
-                            @include('clientes.update')
                         @endforeach
                     </tbody>
                 </table>
@@ -74,8 +72,4 @@
             </div>
         </div>
     </div> <!-- end col -->
-
-    @include('clientes.create')
-    @include('clientes.delete')
-    @include('clientes.update')
 @endsection
