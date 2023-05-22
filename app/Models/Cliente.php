@@ -8,8 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Cliente extends Model
 {
     use HasFactory;
-    protected $table="clientes";
-    protected $primaryKey="id";
+    protected $table = "clientes";
+    protected $primaryKey = "id";
     protected $fillable = [
         'primerNombre',
         'segundoNombre',
@@ -20,4 +20,6 @@ class Cliente extends Model
         'celular',
         'correo'
     ];
+    protected $guarded = [];
+    public $timestamps = false;
 }

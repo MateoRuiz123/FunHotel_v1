@@ -39,7 +39,7 @@ class ClienteController extends Controller
         $cliente->celular = $request->input('celular');
         $cliente->correo = $request->input('correo');
         $cliente->save();
-        return redirect()->route('clientes.index')->with('status', 'Cliente creado exitosamente');
+        return redirect()->back()->with('success', 'Cliente creado exitosamente');
     }
 
     /**
@@ -61,9 +61,9 @@ class ClienteController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Cliente $cliente)
+    public function update(Request $request, $id)
     {
-        $cliente = Cliente::find($cliente->id);
+        $cliente = Cliente::find($id);
         $cliente->primerNombre = $request->input('primerNombre');
         $cliente->segundoNombre = $request->input('segundoNombre');
         $cliente->primerApellido = $request->input('primerApellido');
@@ -72,8 +72,8 @@ class ClienteController extends Controller
         $cliente->numeroDocumento = $request->input('numeroDocumento');
         $cliente->celular = $request->input('celular');
         $cliente->correo = $request->input('correo');
-        $cliente->save();
-        return redirect()->route('clientes.index')->with('status', 'Cliente actualizado exitosamente');
+        $cliente->update();
+        return redirect()->back()->with('success', 'Cliente actualizado exitosamente');
     }
 
     /**
@@ -83,6 +83,6 @@ class ClienteController extends Controller
     {
         $cliente = Cliente::find($cliente->id);
         $cliente->delete();
-        return redirect()->route('clientes.index')->with('status', 'Cliente eliminado exitosamente');
+        return redirect()->back()->with('success', 'Cliente eliminado exitosamente');
     }
 }
