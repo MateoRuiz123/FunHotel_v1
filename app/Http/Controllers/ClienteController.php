@@ -21,7 +21,7 @@ class ClienteController extends Controller
      */
     public function create()
     {
-        return view('clientes.create');
+        // return view('clientes.create');
     }
 
     /**
@@ -47,7 +47,7 @@ class ClienteController extends Controller
      */
     public function show(Cliente $cliente)
     {
-        return view('clientes.show', compact('cliente'));
+        // return view('clientes.show', compact('cliente'));
     }
 
     /**
@@ -55,7 +55,7 @@ class ClienteController extends Controller
      */
     public function edit(Cliente $cliente)
     {
-        return view('clientes.edit', compact('cliente'));
+        // return view('clientes.edit', compact('cliente'));
     }
 
     /**

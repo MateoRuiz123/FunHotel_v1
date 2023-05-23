@@ -12,10 +12,10 @@
             <div class="col-md-4">
                 <div class="float-end d-none d-md-block">
 
-                    <a href="{{route('clientes.create')}}" type="button" class="btn btn-primary">
-                        Registrar <i class="bi bi-person-plus" id="icons"></i>
-                    </a>
-
+                    @include('clientes.create')
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalCreate">
+                        Registrar
+                    </button>
                 </div>
             </div>
         </div>
@@ -55,12 +55,14 @@
                                 <td>{{ $cliente->celular }}</td>
                                 <td>{{ $cliente->correo }}</td>
                                 <td>
-                                    <button type="button" class="btn btn-warning" data-toggle="modal"
-                                        data-target="#EDITAR{{ $cliente->id }}">
+                                    @include('clientes.update')
+                                    <button type="button" class="btn btn-warning" data-bs-toggle="modal"
+                                        data-bs-target="#modalUpdate{{ $cliente->id }}">
                                         <i class="bi bi-pencil-square" id="icons"></i>
                                     </button>
-                                    <button type="button" class="btn btn-danger" data-toggle="modal"
-                                        data-target="#ELIMINAR{{ $cliente->id }}">
+                                    @include('clientes.delete')
+                                    <button type="button" class="btn btn-danger"  data-bs-toggle="modal"
+                                        data-bs-target="#modalDelete{{ $cliente->id }}">
                                         <i class="bi bi-trash3"></i>
                                     </button>
                                 </td>
