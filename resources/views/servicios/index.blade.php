@@ -10,9 +10,10 @@
             <div class="col-md-4">
                 <div class="float-end d-none d-md-block">
 
-                    <a href="#" type="button" class="btn btn-primary" data-toggle="modal" data-target="#crear">
+                    @include('servicios.create')
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalCreate">
                         Registrar <i class="bi bi-plus-circle"></i>
-                    </a>
+                    </button>
 
                 </div>
             </div>
@@ -42,18 +43,18 @@
                                 <td>{{ $servicio->nombre }}</td>
                                 <td>{{ $servicio->descripcion }}</td>
                                 <td>
-                                    <button type="button" class="btn btn-warning" data-toggle="modal"
-                                        data-target="#EDITAR{{ $servicio->id }}">
+                                    @include('servicios.update')
+                                    <button type="button" class="btn btn-warning" data-bs-toggle="modal"
+                                        data-bs-target="#modalUpdate{{ $servicio->id }}">
                                         <i class="bi bi-pencil-square"></i>
                                     </button>
-                                    <button type="button" class="btn btn-danger" data-toggle="modal"
-                                        data-target="#ELIMINAR{{ $servicio->id }}">
+                                    @include('servicios.delete')
+                                    <button type="button" class="btn btn-danger" data-bs-toggle="modal"
+                                        data-bs-target="#modalDelete{{ $servicio->id }}">
                                         <i class="bi bi-trash3"></i>
                                     </button>
                                 </td>
                             </tr>
-                            @include('servicios.delete')
-                            @include('servicios.update')
                         @endforeach
                     </tbody>
                 </table>
@@ -61,6 +62,4 @@
             </div>
         </div>
     </div> <!-- end col -->
-
-    @include('servicios.create')
 @endsection
