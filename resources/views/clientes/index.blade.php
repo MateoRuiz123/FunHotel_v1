@@ -14,7 +14,7 @@
 
                     @include('clientes.create')
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalCreate">
-                        Registrar
+                        Registrar <i class="bi bi-plus-circle"></i>
                     </button>
                 </div>
             </div>
