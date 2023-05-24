@@ -179,6 +179,18 @@
                                 <span>Ventas</span>
                             </a>
                         </li>
+                        <li>
+                            <a href="/categorias" class=" waves-effect">
+                                <i class="bi bi-tags"></i>
+                                <span>Categorias</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/habitaciones" class=" waves-effect">
+                                <i class="bi bi-hospital-fill"></i>
+                                <span>Habitaciones</span>
+                            </a>
+                        </li>
 
                         <li>
                             <a href="javascript: void(0);" class="has-arrow waves-effect">

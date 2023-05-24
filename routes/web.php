@@ -6,6 +6,8 @@ use App\Http\Controllers\ClienteController; // Import controller class
 use App\Http\Controllers\ServicioController; // Import controller class
 use App\Http\Controllers\CatalogoController; // Import controller class
 use App\Http\Controllers\VentaControlador; // Import controller class
+use App\Http\Controllers\CategoriaController; // Import controller class
+use App\Http\Controllers\HabitacionController; // Import controller class
 
 /*
 |--------------------------------------------------------------------------
@@ -31,4 +33,6 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('/servicios', ServicioController::class);
     Route::resource('/catalogos', CatalogoController::class);
     Route::resource('/ventas', VentaControlador::class);
+    Route::resource('/categorias', CategoriaController::class);
+    Route::resource('/habitaciones', HabitacionController::class);
 });
