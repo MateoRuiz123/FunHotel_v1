@@ -173,6 +173,12 @@
                                 <span>Catalogos</span>
                             </a>
                         </li>
+                        <li>
+                            <a href="/ventas" class=" waves-effect">
+                                <i class="bi bi-shop-window"></i>
+                                <span>Ventas</span>
+                            </a>
+                        </li>
 
                         <li>
                             <a href="javascript: void(0);" class="has-arrow waves-effect">

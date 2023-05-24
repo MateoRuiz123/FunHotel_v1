@@ -1,25 +1,29 @@
 <!-- Modal -->
-<div class="modal fade" id="modalUpdate{{ $catalogo->id }}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+<div class="modal fade" id="edit{{ $venta->id }}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
     aria-labelledby="modalCreateLabel" aria-hidden="true">
     <div class="modal-dialog modal-xl">
         <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-5" id="modalCreateLabel">Editar catalogo</h1>
+                <h1 class="modal-title fs-5" id="modalCreateLabel">Editar Venta</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form class="row g-3" method="POST" action="{{ route('catalogos.update', $catalogo->id) }}"
+                <form class="row g-3" method="POST" action="{{ route('ventas.update', $venta->id) }}"
                     enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
-                    <div class="col-md-12">
-                        <label for="nombre" class="form-label">Nombre</label>
-                        <input type="text" class="form-control" name="nombre" id="nombre"
-                            value="{{ $catalogo->nombre }}">
+                    <div class="col-md-6">
+                        <label for="fecha_venta" class="form-label">Fecha de la venta</label>
+                        <input type="text" class="form-control" name="fecha_venta" id="fecha_venta"
+                            value="{{ $venta->fecha_venta }}">
                     </div>
-                    <div class="col-md-12">
-                        <label for="descripcion" class="form-label">Descripcion</label>
-                        <textarea type="text" class="form-control" name="descripcion" id="descripcion">{{ $catalogo->descripcion }}</textarea>
+                    <div class="col-md-6">
+                        <label for="estado" class="form-label">Estado:</label>
+                        <select name="estado" id="estado" class="form-control">
+                            <option value="activo" {{ $venta->estado === 'activo' ? 'selected' : '' }}>Activo</option>
+                            <option value="inactivo" {{ $venta->estado === 'inactivo' ? 'selected' : '' }}>Inactivo
+                            </option>
+                        </select>
                     </div>
 
                     <div class="col-md-12">
@@ -27,11 +31,12 @@
                         <select class="form-control" name="idServicio" id="idServicio">
                             <option disabled value="">Seleccione</option>
                             @foreach ($servicios as $servicio)
-                                <option value="{{ $servicio->id }}" @if ($servicio->id == $catalogo->idServicio) selected @endif>
+                                <option value="{{ $servicio->id }}" @if ($servicio->id == $venta->idServicio) selected @endif>
                                     {{ $servicio->nombre }}
                                 </option>
                             @endforeach
                         </select>
+
                     </div>
 
                     <div class="col-12">

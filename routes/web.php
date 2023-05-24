@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Auth; // Import Auth class
 use App\Http\Controllers\ClienteController; // Import controller class
 use App\Http\Controllers\ServicioController; // Import controller class
 use App\Http\Controllers\CatalogoController; // Import controller class
+use App\Http\Controllers\VentaControlador; // Import controller class
 
 /*
 |--------------------------------------------------------------------------
@@ -29,4 +30,5 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('/clientes', ClienteController::class);
     Route::resource('/servicios', ServicioController::class);
     Route::resource('/catalogos', CatalogoController::class);
+    Route::resource('/ventas', VentaControlador::class);
 });
