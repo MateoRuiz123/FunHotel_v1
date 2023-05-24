@@ -32,6 +32,7 @@
                         <tr>
                             <th>Nombre</th>
                             <th>Descripcion</th>
+                            <th>Precio</th>
                             <th>Acciones</th>
                         </tr>
                     </thead>
@@ -42,6 +43,7 @@
                             <tr>
                                 <td>{{ $servicio->nombre }}</td>
                                 <td>{{ $servicio->descripcion }}</td>
+                                <td>{{ $servicio->precio }}</td>
                                 <td>
                                     @include('servicios.update')
                                     <button type="button" class="btn btn-warning" data-bs-toggle="modal"

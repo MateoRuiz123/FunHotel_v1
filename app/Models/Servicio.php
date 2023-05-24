@@ -12,7 +12,8 @@ class Servicio extends Model
     protected $primaryKey = 'id';
     protected $fillable = [
         'nombre',
-        'descripcion'
+        'descripcion',
+        'precio'
     ];
     public $timestamps = false;
     protected $guarded = [];

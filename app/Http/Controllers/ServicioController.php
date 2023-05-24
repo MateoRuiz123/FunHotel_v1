@@ -33,6 +33,7 @@ class ServicioController extends Controller
             $servicio = new Servicio();
             $servicio->nombre = $request->input('nombre');
             $servicio->descripcion = $request->input('descripcion');
+            $servicio->precio = $request->input('precio');
             $servicio->save();
             return redirect()->back()->with('success', 'Servicio creado exitosamente');
     }
@@ -61,6 +62,7 @@ class ServicioController extends Controller
         $servicio = Servicio::find($servicio->id);
         $servicio->nombre = $request->input('nombre');
         $servicio->descripcion = $request->input('descripcion');
+        $servicio->precio = $request->input('precio');
         $servicio->update();
         return redirect()->back()->with('success', 'Servicio actualizado exitosamente');
     }

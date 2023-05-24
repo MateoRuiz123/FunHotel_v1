@@ -22,6 +22,12 @@
                         <textarea type="text" class="form-control" name="descripcion" id="descripcion">{{ $servicio->descripcion }}</textarea>
                     </div>
 
+                    <div class="col-md-12">
+                        <label for="precio" class="form-label">Precio</label>
+                        <input type="text" class="form-control" name="precio" id="precio"
+                            value="{{ $servicio->precio }}">
+                    </div>
+
                     <div class="col-12">
                         <button type="submit" class="btn btn-primary">Guardar</button>
                     </div>
