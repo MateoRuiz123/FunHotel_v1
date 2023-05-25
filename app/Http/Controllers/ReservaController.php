@@ -30,6 +30,13 @@ class ReservaController extends Controller
      */
     public function store(Request $request)
     {
+        $reservas = new Reserva;
+        $reservas->idHabitacion=$request->input('habitacion');
+        $reservas->idServicio=$request->input('servicio');
+        $reservas->idCliente=$request->input('cliente');
+        $reservas->estado=$request->input('estado');
+        $reservas->save();
+        return redirect()->back();
         //
     }
 
