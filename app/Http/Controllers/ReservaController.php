@@ -51,7 +51,7 @@ class ReservaController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Reserva $reserva)
+    public function edit($id)
     {
         //
     }
@@ -59,16 +59,26 @@ class ReservaController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Reserva $reserva)
+    public function update(Request $request, $id)
     {
+        $reservas=Reserva::find($id);
+        $reservas->idHabitacion=$request->input('habitacion');
+        $reservas->idServicio=$request->input('servicio');
+        $reservas->idCliente=$request->input('cliente');
+        $reservas->estado=$request->input('estado');
+        $reservas->update();
+        return redirect()->back();
         //
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Reserva $reserva)
+    public function destroy($id)
     {
+        $reservas=Reserva::find($id);
+        $reservas->delete();
+        return redirect()->back();
         //
     }
 }
