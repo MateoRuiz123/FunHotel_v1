@@ -8,6 +8,9 @@ use App\Http\Controllers\CatalogoController; // Import controller class
 use App\Http\Controllers\VentaControlador; // Import controller class
 use App\Http\Controllers\CategoriaController; // Import controller class
 use App\Http\Controllers\HabitacionController; // Import controller class
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\RoleController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,4 +38,6 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('/ventas', VentaControlador::class);
     Route::resource('/categorias', CategoriaController::class);
     Route::resource('/habitaciones', HabitacionController::class);
+    Route::resource('/roles', RoleController::class);
+    Route::resource('/users', UserController::class);
 });

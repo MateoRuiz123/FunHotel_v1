@@ -7,6 +7,14 @@ use Illuminate\Http\Request;
 
 class ServicioController extends Controller
 {
+    function __construct()
+    {
+        $this->middleware('permission:servicio-list|servicio-create|servicio-edit|servicio-delete', ['only' => ['index', 'show']]);
+        $this->middleware('permission:servicio-create', ['only' => ['create', 'store']]);
+        $this->middleware('permission:servicio-edit', ['only' => ['edit', 'update']]);
+        $this->middleware('permission:servicio-delete', ['only' => ['destroy']]);
+    }
+
     /**
      * Display a listing of the resource.
      */
@@ -30,12 +38,12 @@ class ServicioController extends Controller
     public function store(Request $request)
     {
 
-            $servicio = new Servicio();
-            $servicio->nombre = $request->input('nombre');
-            $servicio->descripcion = $request->input('descripcion');
-            $servicio->precio = $request->input('precio');
-            $servicio->save();
-            return redirect()->back()->with('success', 'Servicio creado exitosamente');
+        $servicio = new Servicio();
+        $servicio->nombre = $request->input('nombre');
+        $servicio->descripcion = $request->input('descripcion');
+        $servicio->precio = $request->input('precio');
+        $servicio->save();
+        return redirect()->back()->with('success', 'Servicio creado exitosamente');
     }
 
     /**
