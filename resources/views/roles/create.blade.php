@@ -4,31 +4,33 @@
 <div class="page-title-box">
     <div class="row align-items-center">
         <div class="col-md-8">
-            <h6 class="page-title">Datos servicios</h6>
-        </div>
-
-        <div class="col-md-4">
-            <div class="float-end d-none d-md-block">
-
-                @include('servicios.create')
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalCreate">
-                    Registrar <i class="bi bi-plus-circle"></i>
-                </button>
-
-            </div>
+            <h6 class="page-title">Datos roles</h6>
         </div>
     </div>
 </div>
 
-<div class="col-12">
-    <div class="card">
-        <div class="card-body">
-
-            <h4 class="card-title">Botones</h4>
-
-
-
+{!! Form::open(array('route' => 'roles.store','method'=>'POST')) !!}
+<div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="form-group">
+            <strong>Nombre:</strong>
+            {!! Form::text('name', null, array('placeholder' => 'Name','class' => 'form-control')) !!}
         </div>
     </div>
-</div> <!-- end col -->
+    <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="form-group">
+            <strong>Permisos:</strong>
+            <br />
+            @foreach($permission as $value)
+            <label>{{ Form::checkbox('permission[]', $value->id, false, array('class' => 'name')) }}
+                {{ $value->name }}</label>
+            <br />
+            @endforeach
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+        <button type="submit" class="btn btn-primary">Guardar</button>
+    </div>
+</div>
+{!! Form::close() !!}
 @endsection

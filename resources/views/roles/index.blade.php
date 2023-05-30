@@ -9,7 +9,7 @@
         @can('role-create')
         <div class="col-md-4">
             <div class="float-end d-none d-md-block">
-                <a class="btn btn-success" href="{{ route('roles.create') }}"> Create New Role</a>
+                <a class="btn btn-success" href="/create-rol"> Create New Role</a>
             </div>
         </div>
         @endcan
@@ -45,7 +45,7 @@
                         <td>{{ ++$i }}</td>
                         <td>{{ $role->name }}</td>
                         <td>
-                            <a class="btn btn-info" href="{{ route('roles.show',$role->id) }}">Show</a>
+                            <a class="btn btn-info" href="/show-rol/{{ $role->id }}">Show</a>
                             @can('role-edit')
                             <a class="btn btn-primary" href="{{ route('roles.edit',$role->id) }}">Edit</a>
                             @endcan

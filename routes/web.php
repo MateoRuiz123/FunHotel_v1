@@ -40,4 +40,9 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('/habitaciones', HabitacionController::class);
     Route::resource('/roles', RoleController::class);
     Route::resource('/users', UserController::class);
+
+    // create rol
+    Route::get('/create-rol', [RoleController::class, 'create'])->name('roles.create');
+    // show rol
+    Route::get('/show-rol/{id}', [RoleController::class, 'show'])->name('roles.show');
 });
