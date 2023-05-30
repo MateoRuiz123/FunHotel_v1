@@ -9,7 +9,7 @@
         @can('role-create')
         <div class="col-md-4">
             <div class="float-end d-none d-md-block">
-                <a class="btn btn-success" href="/create-rol"> Create New Role</a>
+                <a class="btn btn-success" href="/create-rol">Crear rol</a>
             </div>
         </div>
         @endcan
@@ -45,14 +45,14 @@
                         <td>{{ ++$i }}</td>
                         <td>{{ $role->name }}</td>
                         <td>
-                            <a class="btn btn-info" href="/show-rol/{{ $role->id }}">Show</a>
+                            <a class="btn btn-info" href="/show-rol/{{ $role->id }}">Información</a>
                             @can('role-edit')
-                            <a class="btn btn-primary" href="{{ route('roles.edit',$role->id) }}">Edit</a>
+                            <a class="btn btn-primary" href="/edit-rol/{{ $role->id }}">Editar</a>
                             @endcan
                             @can('role-delete')
                             {!! Form::open(['method' => 'DELETE','route' => ['roles.destroy',
                             $role->id],'style'=>'display:inline']) !!}
-                            {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
+                            {!! Form::submit('Eliminar', ['class' => 'btn btn-danger']) !!}
                             {!! Form::close() !!}
                             @endcan
                         </td>
