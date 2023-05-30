@@ -9,10 +9,9 @@
 
         <div class="col-md-4">
             <div class="float-end d-none d-md-block">
-                @include('users.create')
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalCreate">
-                    Registrar <i class="bi bi-plus-circle"></i>
-                </button>
+                <a href="{{route('users.create')}}" class="btn btn-primary">
+                    Agg <i class="bi bi-plus-circle"></i>
+                </a>
             </div>
         </div>
     </div>
@@ -36,7 +35,8 @@
                         <th>Segundo Apellido</th>
                         <th>Fecha de nacimiento</th>
                         <th>Correo</th>
-                        <th>Contraseña</th>
+                        <th>Roles</th>
+                        <!-- <th>Contraseña</th> -->
                         <th>Acciones</th>
                     </tr>
                 </thead>
@@ -50,16 +50,21 @@
                         <td>{{$user->second_surname}}</td>
                         <td>{{$user->birthday}}</td>
                         <td>{{$user->email}}</td>
-                        <td>{{$user->password}}</td>
+                        <td>
+                            @if(!empty($user->getRoleNames()))
+                            @foreach($user->getRoleNames() as $v)
+                            {{ $v }}
+                            @endforeach
+                            @endif
+                        </td>
+                        <!-- <td>{{$user->password}}</td> -->
                         <td>
                             @include('users.update')
-                            <button type="button" class="btn btn-warning" data-bs-toggle="modal"
-                                data-bs-target="#modalUpdate{{ $user->id }}">
+                            <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#modalUpdate{{ $user->id }}">
                                 <i class="bi bi-pencil-square"></i>
                             </button>
                             @include('users.delete')
-                            <button type="button" class="btn btn-danger" data-bs-toggle="modal"
-                                data-bs-target="#modalDelete{{ $user->id }}">
+                            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modalDelete{{ $user->id }}">
                                 <i class="bi bi-trash3"></i>
                             </button>
                         </td>

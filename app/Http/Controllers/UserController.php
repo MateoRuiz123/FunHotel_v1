@@ -5,14 +5,14 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\User;
-use DragonCode\Contracts\Cashier\Http\Response;
+// use DragonCode\Contracts\Cashier\Http\Response;
 use Spatie\Permission\Models\Role;
 // use DB;
 use Illuminate\Support\Facades\DB;
 // use Hash;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Arr;
-use Illuminate\Support\Facades\View;
+// use Illuminate\Support\Facades\View;
 
 // use DragonCode\Contracts\Cashier\Http\Response;
 // use Illuminate\Contracts\View\View;
@@ -63,7 +63,6 @@ class UserController extends Controller
 
         $user = User::create($input);
         $user->assignRole($request->input('roles'));
-
         return redirect()->route('users.index')
             ->with('success', 'User created successfully');
     }
