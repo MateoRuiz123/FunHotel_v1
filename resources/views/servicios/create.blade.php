@@ -1,6 +1,5 @@
 <!-- Modal -->
-<div class="modal fade" id="modalCreate" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-    aria-labelledby="modalCreateLabel" aria-hidden="true">
+<div class="modal fade" id="modalCreate" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="modalCreateLabel" aria-hidden="true">
     <div class="modal-dialog modal-xl">
         <div class="modal-content">
             <div class="modal-header">
@@ -8,8 +7,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form class="row g-3" method="POST" action="{{ route('servicios.store') }}"
-                    enctype="multipart/form-data">
+                <form class="row g-3" method="POST" action="{{ route('servicios.store') }}" enctype="multipart/form-data">
                     @csrf
                     <div class="col-md-12">
                         <label for="nombre" class="form-label">Nombre</label>
@@ -31,7 +29,6 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                {{-- <button type="button" class="btn btn-primary">Understood</button> --}}
             </div>
         </div>
     </div>

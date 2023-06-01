@@ -191,6 +191,12 @@
                             <span>Habitaciones</span>
                         </a>
                     </li>
+                    <li>
+                        <a href="/reservas" class=" waves-effect">
+                            <i class="bi bi-calendar3"></i>
+                            <span>Reservas</span>
+                        </a>
+                    </li>
 
                     <li>
                         <a href="javascript: void(0);" class="has-arrow waves-effect">

@@ -11,6 +11,7 @@ use App\Http\Controllers\HabitacionController; // Import controller class
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ReservaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,6 +41,7 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('/habitaciones', HabitacionController::class);
     Route::resource('/roles', RoleController::class);
     Route::resource('/users', UserController::class);
+    Route::resource('/reservas', ReservaController::class);
 
     // create rol
     Route::get('/create-rol', [RoleController::class, 'create'])->name('roles.create');
