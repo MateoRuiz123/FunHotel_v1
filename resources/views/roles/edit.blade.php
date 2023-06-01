@@ -1,7 +1,3 @@
-<!--Con bs5 crea toda la estructura con bootstrap, descargando la extensión -->
-<!doctype html>
-<html lang="en">
-
 <head>
     <title>FunHotel</title>
     <!-- Required meta tags -->
@@ -12,7 +8,6 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.5.1/dist/css/bootstrap.min.css">
-
 
     <!-- App favicon -->
     <link rel="shortcut icon" href="{{ asset('assets/images/favicon.ico') }}">
@@ -37,11 +32,11 @@
     <link href="{{ asset('assets/css/app.min.css') }}" id="app-style" rel="stylesheet" type="text/css">
 
     <!--     CLIENTES       -->
-    {{-- <link rel="stylesheet" href="{{ asset('css/clientes.css') }}"> --}}
     <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet" />
 
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
 </head>
 
 <body data-sidebar="dark">
@@ -52,19 +47,19 @@
                 <div class="navbar-brand-box">
                     <a href="index.html" class="logo logo-dark">
                         <span class="logo-sm">
-                            <img src="assets/images/logo-sm.png" alt="" height="22">
+                            <img src="../assets/images/logo-sm.png" alt="" height="22">
                         </span>
                         <span class="logo-lg">
-                            <img src="assets/images/logo-dark.png" alt="" height="17">
+                            <img src="../assets/images/logo-dark.png" alt="" height="17">
                         </span>
                     </a>
 
                     <a href="index.html" class="logo logo-light">
                         <span class="logo-sm">
-                            <img src="assets/images/logo-sm.png" alt="" height="22">
+                            <img src="../assets/images/logo-sm.png" alt="" height="22">
                         </span>
                         <span class="logo-lg">
-                            <img src="assets/images/logo-light.png" alt="" height="18">
+                            <img src="../assets/images/logo-light.png" alt="" height="18">
                         </span>
                     </a>
                 </div>
@@ -103,7 +98,7 @@
                 <div class="dropdown d-inline-block">
                     <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown"
                         data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <img class="rounded-circle header-profile-user" src="assets/images/users/user-4.jpg"
+                        <img class="rounded-circle header-profile-user" src="../assets/images/users/user-4.jpg"
                             alt="Header Avatar">
                     </button>
                     <div class="dropdown-menu dropdown-menu-end">
@@ -191,12 +186,6 @@
                             <span>Habitaciones</span>
                         </a>
                     </li>
-                    <li>
-                        <a href="/reservas" class=" waves-effect">
-                            <i class="bi bi-calendar3"></i>
-                            <span>Reservas</span>
-                        </a>
-                    </li>
 
                     <li>
                         <a href="javascript: void(0);" class="has-arrow waves-effect">
@@ -217,57 +206,63 @@
     <!-- Left Sidebar End -->
     @endauth
 
-    <!-- Right Sidebar -->
-    <div class="right-bar">
-        <div data-simplebar class="h-100">
-            <div class="rightbar-title px-3 py-4">
-                <a href="javascript:void(0);" class="right-bar-toggle float-end">
-                    <i class="mdi mdi-close noti-icon"></i>
-                </a>
-                <h5 class="m-0">Settings</h5>
-            </div>
-
-            <!-- Settings -->
-            <hr class="mt-0" />
-            <h6 class="text-center">Choose Layouts</h6>
-
-            <div class="p-4">
-                <div class="mb-2">
-                    <img src="assets/images/layouts/layout-1.jpg" class="img-fluid img-thumbnail" alt="">
-                </div>
-                <div class="form-check form-switch mb-3">
-                    <input type="checkbox" class="form-check-input theme-choice" id="light-mode-switch" checked />
-                    <label class="form-check-label" for="light-mode-switch">Light Mode</label>
-                </div>
-
-                <div class="mb-2">
-                    <img src="assets/images/layouts/layout-2.jpg" class="img-fluid img-thumbnail" alt="">
-                </div>
-                <div class="form-check form-switch mb-3">
-                    <input type="checkbox" class="form-check-input theme-choice" id="dark-mode-switch"
-                        data-bsStyle="assets/css/bootstrap-dark.min.css" data-appStyle="assets/css/app-dark.min.css" />
-                    <label class="form-check-label" for="dark-mode-switch">Dark Mode</label>
-                </div>
-            </div>
-
-        </div> <!-- end slimscroll-menu-->
-    </div>
-    <!-- /Right-bar -->
-
     <div class="main-content">
         <div class="page-content">
             <div class="container-fluid">
                 <div class="row">
-                    <main class="py-4">
-                        @yield('content')
-                    </main>
+                    <!-- <div class="row"> -->
+                    <div class="col-lg-12 margin-tb">
+                        <div class="pull-left">
+                            <h2>Editar Rol</h2>
+                        </div>
+                        <div class="pull-right">
+                            <a class="btn btn-primary" href="{{ route('roles.index') }}"> Atras</a>
+                        </div>
+                    </div>
+                    <!-- </div> -->
+
+
+                    @if (count($errors) > 0)
+                    <div class="alert alert-danger">
+                        <strong>Whoops!</strong> There were some problems with your input.<br><br>
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                    @endif
+
+
+                    {!! Form::model($role, ['method' => 'PATCH','route' => ['roles.update', $role->id]]) !!}
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-12">
+                            <div class="form-group">
+                                <strong>Nombre:</strong>
+                                {!! Form::text('name', null, array('placeholder' => 'Name','class' => 'form-control'))
+                                !!}
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-12">
+                            <div class="form-group">
+                                <strong>Permisos:</strong>
+                                <br />
+                                @foreach($permission as $value)
+                                <label>{{ Form::checkbox('permission[]', $value->id, in_array($value->id, $rolePermissions) ? true : false, array('class' => 'name')) }}
+                                    {{ $value->name }}</label>
+                                <br />
+                                @endforeach
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+                            <button type="submit" class="btn btn-primary">Guardar</button>
+                        </div>
+                    </div>
+                    {!! Form::close() !!}
                 </div>
             </div>
         </div>
     </div>
-
-    <!-- Right bar overlay-->
-    <div class="rightbar-overlay"></div>
 
     <!-- Bootstrap JavaScript Libraries -->
 
@@ -281,15 +276,6 @@
         integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous">
     </script>
     <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
-
-
-    {{-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
-    </script> --}}
-
 
     <!-- JAVASCRIPT -->
     <script src="{{ asset('assets/libs/jquery/jquery.min.js') }}"></script>
@@ -319,14 +305,6 @@
 
     <script src="{{ asset('assets/js/app.js') }}"></script>
 
-    {{-- <script src="{{ asset('js/validacion.js') }}"></script> --}}
 
     <script src="https://kit.fontawesome.com/d7b674392a.js" crossorigin="anonymous"></script>
-    {{--
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.5.1/dist/js/bootstrap.min.js"></script> --}}
-
-
 </body>
-
-</html>
