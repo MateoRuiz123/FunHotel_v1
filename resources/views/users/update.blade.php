@@ -45,6 +45,12 @@
                         <input type="password" class="form-control" name="password" id="password"
                             value="{{ $user->password }}">
                     </div>
+                    <div class="col-md-6">
+                        <label for="password" class="form-label">Confirmar contraseña</label>
+                        {!! Form::password('confirm-password', array('placeholder' => 'Confirm Password','class' =>
+                        'form-control'))
+                        !!}
+                    </div>
 
                     <div class="col-12">
                         <button type="submit" class="btn btn-primary">Guardar</button>
@@ -53,7 +59,6 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                {{-- <button type="button" class="btn btn-primary">Understood</button> --}}
             </div>
         </div>
     </div>

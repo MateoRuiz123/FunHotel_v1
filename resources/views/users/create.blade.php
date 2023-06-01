@@ -38,12 +38,16 @@
                         <label for="password" class="form-label">Contraseña</label>
                         <input type="password" class="form-control" name="password" id="password">
                     </div>
+                    <div class="col-md-6">
+                        <label for="password" class="form-label">Confirmar contraseña</label>
+                        {!! Form::password('confirm-password', array('placeholder' => 'Confirm Password','class' =>
+                        'form-control'))
+                        !!}
+                    </div>
                     <div class="col-md-12">
                         <div class="form-group">
                             <strong>Rol:</strong>
-                            <select name="roles[]" class="form-control" multiple>
-                                {!! Form::select('roles[]', $roles,[], array('class' => 'form-control','multiple')) !!}
-                            </select>
+                            {!! Form::select('roles[]', $roles,[], array('class' => 'form-control','multiple')) !!}
                         </div>
                     </div>
 

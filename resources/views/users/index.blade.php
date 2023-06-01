@@ -10,7 +10,7 @@
         <div class="col-md-4">
             <div class="float-end d-none d-md-block">
                 <a href="{{route('users.create')}}" class="btn btn-primary">
-                    Agg <i class="bi bi-plus-circle"></i>
+                    Registrar <i class="bi bi-plus-circle"></i>
                 </a>
             </div>
         </div>
