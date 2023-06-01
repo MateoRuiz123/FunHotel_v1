@@ -13,7 +13,7 @@ class ReservaController extends Controller
     public function index()
     {
         $reservas = Reserva::all();
-        return view('reserva.index', compact('reservas'));
+        return view('reservas.index', compact('reservas'));
         //
     }
 
