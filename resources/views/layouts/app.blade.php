@@ -42,6 +42,9 @@
 
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+    <!--     LOADER       -->
+    <link rel="stylesheet" href="{{ asset('css/loader.css') }}">
 </head>
 
 <body data-sidebar="dark">
@@ -259,6 +262,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <main class="py-4">
+                        @include('loader')
                         @yield('content')
                     </main>
                 </div>
@@ -326,7 +330,8 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.5.1/dist/js/bootstrap.min.js"></script> --}}
 
-
+    <!-- App js loader -->
+    <script src="{{ asset('js/loader.js') }}"></script>
 </body>
 
 </html>
