@@ -9,9 +9,14 @@
 
         <div class="col-md-4">
             <div class="float-end d-none d-md-block">
-                <a href="{{route('users.create')}}" class="btn btn-primary">
+                {{-- <a href="{{route('users.create')}}" class="btn btn-primary">
                     Registrar <i class="bi bi-plus-circle"></i>
-                </a>
+                </a> --}}
+
+                @include('users.create')
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalCreate">
+                        Registrar <i class="bi bi-plus-circle"></i>
+                    </button>
             </div>
         </div>
     </div>

@@ -51,6 +51,18 @@
                         'form-control'))
                         !!}
                     </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <strong>Rol:</strong>
+                            {{-- {!! Form::select('roles[]', $roles, [], ['class' => 'form-control', 'multiple']) !!} --}}
+                            <select name="roles" class="form-control" >
+                                @foreach ($roles as $role)
+                                    <option value="{{ $role->id }}">{{ $role->name }}</option>
+                                @endforeach
+                            </select>
+
+                        </div>
+                    </div>
 
                     <div class="col-12">
                         <button type="submit" class="btn btn-primary">Guardar</button>

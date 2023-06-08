@@ -40,14 +40,18 @@
                     </div>
                     <div class="col-md-6">
                         <label for="password" class="form-label">Confirmar contraseña</label>
-                        {!! Form::password('confirm-password', array('placeholder' => 'Confirm Password','class' =>
-                        'form-control'))
-                        !!}
+                        {!! Form::password('confirm-password', ['placeholder' => 'Confirm Password', 'class' => 'form-control']) !!}
                     </div>
                     <div class="col-md-12">
                         <div class="form-group">
                             <strong>Rol:</strong>
-                            {!! Form::select('roles[]', $roles,[], array('class' => 'form-control','multiple')) !!}
+                            {{-- {!! Form::select('roles[]', $roles, [], ['class' => 'form-control', 'multiple']) !!} --}}
+                            <select name="roles[]" class="form-control" multiple>
+                                @foreach ($roles as $role)
+                                    <option value="{{ $role->id }}">{{ $role->name }}</option>
+                                @endforeach
+                            </select>
+
                         </div>
                     </div>
 

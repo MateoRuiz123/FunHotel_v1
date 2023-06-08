@@ -27,7 +27,8 @@ class UserController extends Controller
     public function index(Request $request)
     {
         $users = User::all();
-        return view('users.index', compact('users'));
+        $roles = Role::all();
+        return view('users.index', compact('users', 'roles'));
     }
 
     /**
@@ -65,6 +66,8 @@ class UserController extends Controller
 
         $user = User::create($input);
         $user->assignRole($request->input('roles'));
+
+
         return redirect()->route('users.index')
             ->with('success', 'User created successfully');
     }
