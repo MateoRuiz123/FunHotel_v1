@@ -12,10 +12,6 @@ use Illuminate\Support\Facades\DB;
 // use Hash;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Arr;
-// use Illuminate\Support\Facades\View;
-
-// use DragonCode\Contracts\Cashier\Http\Response;
-// use Illuminate\Contracts\View\View;
 
 
 
