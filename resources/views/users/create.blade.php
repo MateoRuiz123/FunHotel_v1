@@ -46,7 +46,7 @@
                         <div class="form-group">
                             <strong>Rol:</strong>
                             {{-- {!! Form::select('roles[]', $roles, [], ['class' => 'form-control', 'multiple']) !!} --}}
-                            <select name="roles[]" class="form-control" multiple>
+                            <select name="roles" class="form-control" >
                                 @foreach ($roles as $role)
                                     <option value="{{ $role->id }}">{{ $role->name }}</option>
                                 @endforeach
