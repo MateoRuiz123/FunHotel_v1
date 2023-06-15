@@ -16,13 +16,13 @@
                     @method('PUT')
                     <div class="col-md-6">
                         <label for="" class="form-label"> Fecha de ingreso</label>
-                        <input type="datetime" class="form-control" name="ingreso" id="" aria-describedby="helpId"
+                        <input type="date" class="form-control" name="ingreso" id="" aria-describedby="helpId"
                             placeholder="" value="{{$checkin->fecIngreso}}">
                     </div>
 
                     <div class="col-md-6">
                         <label for="" class="form-label">Id Reserva</label>
-                        <input type="text" class="form-control" name="reserva" id="" aria-describedby="helpId"
+                        <input type="number" class="form-control" name="reserva" id="" aria-describedby="helpId"
                             placeholder="" value="{{$checkin->idReserva}}">
                     </div>
                     <div class="col-md-12">

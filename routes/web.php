@@ -43,7 +43,7 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('/roles', RoleController::class);
     Route::resource('/users', UserController::class);
     Route::resource('/reservas', ReservaController::class);
-    Route::resource('/reservas', CheckinController::class);
+    Route::resource('/checkins', CheckinController::class);
 
     // create rol
     Route::get('/create-rol', [RoleController::class, 'create'])->name('roles.create');

@@ -13,12 +13,12 @@
           @csrf
           <div class="col-md-6">
             <label for="" class="form-label"> Fecha de ingreso</label>
-            <input type="text" class="form-control" name="ingreso" id="" aria-describedby="helpId" placeholder="">
+            <input type="date" class="form-control" name="ingreso" id="" aria-describedby="helpId" placeholder="">
           </div>
 
           <div class="col-md-6">
             <label for="" class="form-label">Id Reserva</label>
-            <input type="text" class="form-control" name="reserva" id="" aria-describedby="helpId" placeholder="">
+            <input type="number" class="form-control" name="reserva" id="" aria-describedby="helpId" placeholder="">
           </div>
             <button type="submit" class="btn btn-primary">Agregar</button>
           </div>
