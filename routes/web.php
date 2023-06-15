@@ -12,6 +12,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ReservaController;
+use App\Http\Controllers\CheckinController;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,6 +43,7 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('/roles', RoleController::class);
     Route::resource('/users', UserController::class);
     Route::resource('/reservas', ReservaController::class);
+    Route::resource('/reservas', CheckinController::class);
 
     // create rol
     Route::get('/create-rol', [RoleController::class, 'create'])->name('roles.create');
