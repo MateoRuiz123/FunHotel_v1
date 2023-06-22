@@ -2,18 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Checkin;
+use App\Models\Checkout;
 use Illuminate\Http\Request;
 
-class CheckinController extends Controller
+class CheckoutController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $checkins = Checkin::all();
-        return view('checkins.index', compact('checkins'));
+        $checkouts = Checkout::all();
+        return view('checkouts.index', compact('checkouts'));
         //
     }
 
@@ -30,10 +30,12 @@ class CheckinController extends Controller
      */
     public function store(Request $request)
     {
-        $checkins = new Checkin();
-        $checkins-> fecIngreso = $request->input('ingreso');
-        $checkins->idReserva = $request->input('reserva');
-        $checkins->save();
+        $checkouts = new Checkout();
+        $checkouts-> fecSalida = $request->input('salida');
+        $checkouts->idCheckin = $request->input('checkin');
+        $checkouts->idMetodoPago = $request->input('metpago');
+        $checkouts->idVenta = $request->input('venta');
+        $checkouts->save();
         return redirect()->back();
         //
     }
@@ -41,7 +43,7 @@ class CheckinController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Checkin $checkin)
+    public function show(Checkout $checkout)
     {
         //
     }
@@ -59,10 +61,12 @@ class CheckinController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $checkins = Checkin::find($id);
-        $checkins-> fecIngreso = $request->input('ingreso');
-        $checkins->idReserva = $request->input('reserva');
-        $checkins->update();
+        $checkouts = Checkout::find($id);
+        $checkouts-> fecSalida = $request->input('salida');
+        $checkouts->idCheckin = $request->input('checkin');
+        $checkouts->idMetodoPago = $request->input('metpago');
+        $checkouts->idVenta = $request->input('venta');
+        $checkouts->update();
         return redirect()->back();
         //
     }
@@ -72,9 +76,10 @@ class CheckinController extends Controller
      */
     public function destroy($id)
     {
-        $checkins = Checkin::find($id);
-        $checkins->delete();
+        $checkouts = Checkout::find($id);
+        $checkouts->delete();
         return redirect()->back();
+
         //
     }
 }
