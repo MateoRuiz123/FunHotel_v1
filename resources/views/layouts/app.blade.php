@@ -213,6 +213,13 @@
                     </li>
 
                     <li>
+                        <a href="/pagos" class=" waves-effect">
+                            <i class="bi bi-calendar3"></i>
+                            <span>Metodo de pago</span>
+                        </a>
+                    </li>
+
+                    <li>
                         <a href="javascript: void(0);" class="has-arrow waves-effect">
                             <i class="ti-email"></i>
                             <span>Otros</span>

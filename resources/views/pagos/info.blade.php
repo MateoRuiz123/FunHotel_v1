@@ -4,20 +4,20 @@
     <div class="modal-dialog modal-xl">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Editar reserva</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Editar Metodo de pago</h5>
                 <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                <form class="row g-3" action="{{route('pagos.update',$reserva->id)}}" method="post"
+                <form class="row g-3" action="{{route('pagos.update',$pago->id)}}" method="post"
                     enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
                     <div class="col-md-6">
                         <label for="" class="form-label"> Nombre Metodo de pago</label>
                         <input type="text" class="form-control" name="nombre" id="" aria-describedby="helpId"
-                            placeholder="" value="{{$pago->idHabitacion}}">
+                            placeholder="" value="{{$pago->nombre}}">
                     </div>
 
                     </div>

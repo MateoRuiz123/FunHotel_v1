@@ -48,8 +48,8 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('/reservas', ReservaController::class);
     Route::resource('/checkins', CheckinController::class);
     Route::resource('/checkouts', CheckoutController::class);
-    Route::resource('/pagos', CheckoutController::class);
-
+    Route::resource('/pagos', PagoController::class);
+    
     // create rol
     Route::get('/create-rol', [RoleController::class, 'create'])->name('roles.create');
     // show rol

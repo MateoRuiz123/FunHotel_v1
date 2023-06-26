@@ -58,7 +58,7 @@ class PagoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $pagos = new Pago();
+        $pagos = Pago::find($id);
         $pagos-> nombre = $request->input('nombre');
         $pagos->update();
         return redirect()->back();
@@ -70,8 +70,8 @@ class PagoController extends Controller
      */
     public function destroy($id)
     {
-        $pagos = new Pago();
-        $pagos->destroy();
+        $pagos = Pago::find($id);
+        $pagos->delete();
         return redirect()->back();
         //
     }

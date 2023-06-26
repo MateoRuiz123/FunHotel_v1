@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class pago extends Model
 {
     use HasFactory;
-    protected $table = 'pagos';
+    protected $table = 'metodo_pagos';
     protected $primarykey = 'id';
     protected $fillable = ['nombre'];
     protected $guarded = [];
